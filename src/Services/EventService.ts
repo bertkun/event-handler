@@ -45,7 +45,7 @@ async function fetcher<T>(path: string, opts: RequestInit = {}): Promise<T> {
   return (await res.json()) as T;
 }
 
-export async function getEvents(): Promise<Event[]> {
+export function getEvents(): Promise<Event[]> {
   if (hasRemote) {
     return fetcher<Event[]>("/events");
   }
